@@ -49,11 +49,12 @@ class ViewController: UIViewController {
     // MARK:
     // MARK: Filter Methods
     
-    //
+    // Action to display the search filters page.
     @IBAction func showSearchFilterPage(sender: AnyObject) {
         let searchViewController = SearchViewController()
         let navController = UINavigationController(rootViewController: searchViewController)
-        self.presentViewController(navController, animated: true, completion: nil)
+        
+        self.presentViewController(navController, animated: false, completion: nil)
     }
 }
 
