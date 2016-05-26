@@ -10,29 +10,34 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
     
     // MARK:
     // MARK: Local Variables
+    
     @IBOutlet weak var mapView: MKMapView!
     var detailViewController: DetailViewController? = nil
     var searchViewController: SearchViewController? = nil
-    
+    var apiUtility = APIUtility()
     var objects = [AnyObject]()
 
     // MARK:
     // MARK: Core Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Default to user's current location
         mapView.showsUserLocation = true
+        
+        print(apiUtility.performGetCall())
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK:
     // MARK: Map Methods

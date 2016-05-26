@@ -47,9 +47,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>HospitalLocator needs to use your location</string>
+	<string>HospitalLocator needs to use your location.</string>
 	<key>GooglePlacesAPIKey</key>
-	<string>AIzaSyBmXP01eMYGQJgMQFi2eoPslDl9pFOku-0</string>
+	<string>AIzaSyB6xydv4He0Hj6SjWJDbghJOdghCuUx0p8</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
