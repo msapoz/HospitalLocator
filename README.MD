@@ -14,3 +14,5 @@ To run the project in xcode with the activated pod, run the generated .xcworkspa
 * http://krakendev.io/blog/weak-and-unowned-references-in-swift
 * http://www.techotopia.com/index.php/Working_with_Maps_on_iOS_8_with_Swift,_MapKit_and_the_MKMapView_Class#Obtaining_Location_Information_Permission
 * https://www.raywenderlich.com/59255/afnetworking-2-0-tutorial
+* http://roadfiresoftware.com/2015/10/how-to-parse-json-with-swift-2/
+* https://github.com/Alamofire/Alamofire

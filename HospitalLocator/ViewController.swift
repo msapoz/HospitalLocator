@@ -30,7 +30,38 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Default to user's current location
         mapView.showsUserLocation = true
         
-        print(apiUtility.performGetCall())
+        
+        apiUtility.performGetCall { (results) in
+            if (results != nil) {
+                
+                // Populate map with pin locations using the callback.
+                for result in results! {
+                    
+                    let lat = result["latitude"] as! Double
+                    let lng = result["longitude"] as! Double
+                    
+                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                    
+                    // Drop an annotation
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinate
+                    annotation.title = result["name"] as? String
+                    
+                    if let rating = result["rating"] as? String {
+                        annotation.subtitle = "Rating: " + rating
+                    }
+                    
+                    self.mapView?.addAnnotation(annotation)
+                }
+                
+                
+            }
+            else {
+                
+                // Otherwise display an alert.
+                DisplayAlert("Not Found", message: "No Results Found!", viewController: self)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

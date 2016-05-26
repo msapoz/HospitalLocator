@@ -40,6 +40,12 @@ class SearchViewController : UITableViewController {
     }
     
     func PerformSearch(sender: UIBarButtonItem){
+        
+        // RUN API UTILITY (ASYNC)
+        
+        // CLOSE VIEW
+        
+        
     }
     
 }

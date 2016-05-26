@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		118A74414500BA30BF772BE3 /* Pods_HospitalLocator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B2A2D02B4C55CB40064FA /* Pods_HospitalLocator.framework */; };
 		2516153C1CF78DDF00221C53 /* APIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2516153B1CF78DDF00221C53 /* APIUtility.swift */; };
-		2516153E1CF78E3600221C53 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2516153D1CF78E3600221C53 /* libAFNetworking.a */; };
 		252F10E71CF7455200B8ED1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252F10E61CF7455200B8ED1B /* AppDelegate.swift */; };
 		252F10E91CF7455200B8ED1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252F10E81CF7455200B8ED1B /* ViewController.swift */; };
 		252F10EB1CF7455200B8ED1B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252F10EA1CF7455200B8ED1B /* DetailViewController.swift */; };
@@ -20,7 +20,8 @@
 		252F11171CF74D1C00B8ED1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252F11161CF74D1C00B8ED1B /* MapKit.framework */; };
 		252F11191CF74D2600B8ED1B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252F11181CF74D2600B8ED1B /* CoreLocation.framework */; };
 		256D0D441CF7717D000B72B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D0D431CF7717D000B72B1 /* SearchViewController.swift */; };
-		4E3BA1E13D7C177BBFF19F8B /* libPods-HospitalLocator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD845CC25AC64598AE4EB231 /* libPods-HospitalLocator.a */; };
+		25AF6E141CF7A65A0056CA69 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AF6E131CF7A65A0056CA69 /* Alamofire.framework */; };
+		25AF6E161CF7ADC90056CA69 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF6E151CF7ADC90056CA69 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,6 @@
 		1E8809259DE2AA3F0F4B3BB1 /* Pods-HospitalLocator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HospitalLocator.release.xcconfig"; path = "Pods/Target Support Files/Pods-HospitalLocator/Pods-HospitalLocator.release.xcconfig"; sourceTree = "<group>"; };
 		2516153B1CF78DDF00221C53 /* APIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUtility.swift; sourceTree = "<group>"; };
 		2516153D1CF78E3600221C53 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../Library/Developer/Xcode/DerivedData/HospitalLocator-aavggjlzauimypfcpxqfrcyossli/Build/Products/Debug-iphonesimulator/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
-		2516153F1CF78F5300221C53 /* AFNetworkingBridgeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkingBridgeFile.h; sourceTree = "<group>"; };
 		252F10E31CF7455200B8ED1B /* HospitalLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HospitalLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		252F10E61CF7455200B8ED1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		252F10E81CF7455200B8ED1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,8 +62,10 @@
 		252F11161CF74D1C00B8ED1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		252F11181CF74D2600B8ED1B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		256D0D431CF7717D000B72B1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		25AF6E131CF7A65A0056CA69 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/HospitalLocator-aavggjlzauimypfcpxqfrcyossli/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		25AF6E151CF7ADC90056CA69 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		BF5B2A2D02B4C55CB40064FA /* Pods_HospitalLocator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HospitalLocator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6880930BBD80327F529A3A8 /* Pods-HospitalLocator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HospitalLocator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HospitalLocator/Pods-HospitalLocator.debug.xcconfig"; sourceTree = "<group>"; };
-		FD845CC25AC64598AE4EB231 /* libPods-HospitalLocator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HospitalLocator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +73,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2516153E1CF78E3600221C53 /* libAFNetworking.a in Frameworks */,
+				25AF6E141CF7A65A0056CA69 /* Alamofire.framework in Frameworks */,
 				252F11191CF74D2600B8ED1B /* CoreLocation.framework in Frameworks */,
 				252F11171CF74D1C00B8ED1B /* MapKit.framework in Frameworks */,
-				4E3BA1E13D7C177BBFF19F8B /* libPods-HospitalLocator.a in Frameworks */,
+				118A74414500BA30BF772BE3 /* Pods_HospitalLocator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +133,7 @@
 				252F10F41CF7455200B8ED1B /* Info.plist */,
 				256D0D431CF7717D000B72B1 /* SearchViewController.swift */,
 				2516153B1CF78DDF00221C53 /* APIUtility.swift */,
-				2516153F1CF78F5300221C53 /* AFNetworkingBridgeFile.h */,
+				25AF6E151CF7ADC90056CA69 /* AlertHelper.swift */,
 			);
 			path = HospitalLocator;
 			sourceTree = "<group>";
@@ -166,8 +168,9 @@
 		7FDD987DA7999AF9757748F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25AF6E131CF7A65A0056CA69 /* Alamofire.framework */,
 				2516153D1CF78E3600221C53 /* libAFNetworking.a */,
-				FD845CC25AC64598AE4EB231 /* libPods-HospitalLocator.a */,
+				BF5B2A2D02B4C55CB40064FA /* Pods_HospitalLocator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25AF6E161CF7ADC90056CA69 /* AlertHelper.swift in Sources */,
 				252F10EB1CF7455200B8ED1B /* DetailViewController.swift in Sources */,
 				252F10E91CF7455200B8ED1B /* ViewController.swift in Sources */,
 				2516153C1CF78DDF00221C53 /* APIUtility.swift in Sources */,
@@ -511,7 +515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mike.App.HospitalLocator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = HospitalLocator/AFNetworkingBridgeFile.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -525,7 +529,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mike.App.HospitalLocator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = HospitalLocator/AFNetworkingBridgeFile.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
