@@ -19,3 +19,4 @@ To run the project in xcode with the activated pod, run the generated HospitalLo
 * http://roadfiresoftware.com/2015/10/how-to-parse-json-with-swift-2/
 * https://github.com/Alamofire/Alamofire
 * http://useyourloaf.com/blog/quick-guide-to-swift-delegates/
+* https://thatthinginswift.com/singletons/

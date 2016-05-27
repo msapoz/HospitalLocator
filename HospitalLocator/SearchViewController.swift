@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import Foundation
 
 class SearchViewController : UITableViewController {
+    
+    // MARK:
+    // MARK: UI Element Outlets
+    
+    @IBOutlet weak var toggleDoctor: UISwitch!
+    @IBOutlet weak var toggleHospital: UISwitch!
+    @IBOutlet weak var segmentRadius: UISegmentedControl!
     
     // MARK:
     // MARK: Core Methods
@@ -30,10 +38,13 @@ class SearchViewController : UITableViewController {
         // Submit Button
         let submitButton = UIBarButtonItem(title: "Submit", style: UIBarButtonItemStyle.Plain, target: self, action:#selector(SearchViewController.PerformSearch(_:)))
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = submitButton
+        
+        // Remove default separator padding.
+        self.tableView.separatorInset.left = 0
     }
     
-    //MARK:
-    //MARK: Button Handler Methods
+    // MARK:
+    // MARK: Button Handler Methods
     
     func CloseView(sender: UIBarButtonItem){
         self.dismissViewControllerAnimated(true, completion:nil)
@@ -41,11 +52,24 @@ class SearchViewController : UITableViewController {
     
     func PerformSearch(sender: UIBarButtonItem){
         
-        // CALL API UTILITY (ASYNC)
+        var searchTypes: [String] = []
+       
+        if toggleDoctor.on {
+            searchTypes.append("doctor")
+        }
+        if toggleHospital.on {
+            searchTypes.append("hospital")
+        }
         
-        // CLOSE VIEW
+        let radius = segmentRadius.titleForSegmentAtIndex(segmentRadius.selectedSegmentIndex)
         
+        APIUtility.sharedInstance.performGetRequest(radius!, types: searchTypes)
         
+        self.dismissViewControllerAnimated(true, completion:nil)
     }
+    
+    // MARK
+    // MARK: Filter IB Actions
+    
     
 }

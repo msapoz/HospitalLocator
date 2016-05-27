@@ -10,15 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, CLLocationManagerDelegate {
     
     // MARK:
     // MARK: Local Variables
     
     @IBOutlet weak var mapView: MKMapView!
+    var locationManager: CLLocationManager!
     var detailViewController: DetailViewController? = nil
     var searchViewController: SearchViewController? = nil
-    var apiUtility = APIUtility()
     var objects = [AnyObject]()
 
     // MARK:
@@ -27,12 +27,18 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        apiUtility.delegate = self
+        // Initialize delegate that retrieves API call result set.
+        APIUtility.sharedInstance.delegate = self
         
-        // Default to user's current location
-        mapView.showsUserLocation = true
+//        if CLLocationManager.locationServicesEnabled(){
+//            locationManager = CLLocationManager()
+//            locationManager.delegate = self
+//            locationManager.startUpdatingLocation()
+//        }
         
-        apiUtility.performGetRequest()()
+        self.mapView.showsUserLocation = true;
+        
+        APIUtility.sharedInstance.performGetRequest("0.5", types: ["Hospital"])
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,22 +50,28 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate {
     // MARK:
     // MARK: Map Methods
     
+    // Interface builder action for zooming to current location
+    @IBAction func zoomToCurrentLocationAction(sender: AnyObject) {
+        [self .zoomToCurrentLocation(self)]
+    }
+    
     // Default to user's location when the GPSArrow is clicked.
-    @IBAction func zoomToCurrentLocation(sender: AnyObject) {
+    func zoomToCurrentLocation(sender: AnyObject) {
         if let coordinate = mapView.userLocation.location?.coordinate {
             let region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
             mapView.setRegion(region, animated: true)
         }
     }
 
-    
     // MARK:
     // MARK: Filter Methods
     
     // Action to display the search filters page.
     @IBAction func showSearchFilterPage(sender: AnyObject) {
-        let searchViewController = SearchViewController()
-        let navController = UINavigationController(rootViewController: searchViewController)
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let svc : SearchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as! SearchViewController
+        let navController = UINavigationController(rootViewController: svc)
         
         self.presentViewController(navController, animated: false, completion: nil)
     }
@@ -68,6 +80,8 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate {
     // MARK: Delegate Implementations
     
     func didFinishRetrievingData(results: [[String : AnyObject]]?, sender: AnyObject) {
+        
+        mapView.removeAnnotations( mapView.annotations )
         
         if (results != nil) {
             
@@ -90,8 +104,6 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate {
                 
                 self.mapView?.addAnnotation(annotation)
             }
-            
-            
         }
         else {
             
@@ -99,6 +111,14 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate {
             DisplayAlert("Not Found", message: "No Results Found!", viewController: self)
         }
         
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last! as CLLocation
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpanMake(0.5, 0.5))
+        
+        self.mapView.setRegion(region, animated: true)
     }
 }
 

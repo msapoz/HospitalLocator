@@ -249,7 +249,7 @@
 				TargetAttributes = {
 					252F10E21CF7455200B8ED1B = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 56HQ8UQ2A5;
+						DevelopmentTeam = J2DWZQF4BU;
 					};
 					252F10F81CF7455200B8ED1B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -514,12 +514,17 @@
 			baseConfigurationReference = E6880930BBD80327F529A3A8 /* Pods-HospitalLocator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = HospitalLocator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Mike.App.HospitalLocator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msapoz.app.hospitallocator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -528,12 +533,17 @@
 			baseConfigurationReference = 1E8809259DE2AA3F0F4B3BB1 /* Pods-HospitalLocator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sahir Memon (J2DWZQF4BU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sahir Memon (J2DWZQF4BU)";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = HospitalLocator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Mike.App.HospitalLocator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msapoz.app.hospitallocator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

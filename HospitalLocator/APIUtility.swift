@@ -12,12 +12,20 @@ import Alamofire
 
 class APIUtility {
     
+    static let sharedInstance = APIUtility() // Singleton
     weak var delegate : APIUtilityDelegate?
     
-    func performGetRequest() {
+    func performGetRequest(radius: String, types: [String]) {
         
         let apiURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
         let apiKey = "AIzaSyB6xydv4He0Hj6SjWJDbghJOdghCuUx0p8"
+        
+        var locations: [[String:AnyObject]] = []
+        
+        if types.count == 0 {
+            self.delegate?.didFinishRetrievingData(locations, sender: self)
+            return
+        }
         
         // Determine the current location to set as a query string parameter in the GET request below.
         let locationManager = CLLocationManager()
@@ -25,14 +33,15 @@ class APIUtility {
         let currentLocation = "\(currentCoordinate!.latitude),\(currentCoordinate!.longitude)"
         
         // Additional passed in search criteria.
-        let type = "restaurant"
-        let radius = "10000"
+        let radius = Double(radius)! * 1609.34
+        let type = types.joinWithSeparator("&type=")
         
-        var locations: [[String:AnyObject]] = []
+        
         
         Alamofire.request(.GET, apiURL, parameters: ["location": currentLocation, "key": apiKey, "radius": radius, "type": type])
             .responseJSON { response in
-
+                
+                print (response.request)
                 if let JSON = response.result.value {
                     
                     // Parse the JSON object and extract name, rating and lat/lng location
