@@ -4,8 +4,8 @@ The Hospital Locator app displays health providers available around your current
 
 ## Installation
 
-This project uses the Alamofire CocoaPod as specified [here](https://github.com/Alamofire/Alamofire) to make the REST calls to the API.
-To run the project in xcode with the activated pod, run the generated HospitalLocator.xcworkspace file instead of HospitalLocator.xcodeproj.
+This project uses the Alamofire CocoaPod as specified [here](https://github.com/Alamofire/Alamofire) to make the REST calls to the API. You can run the pod install command using the PodFile in the source to download the required project.
+To run the project in xcode with the installed pod, run the generated HospitalLocator.xcworkspace file instead of HospitalLocator.xcodeproj.  
 
 ## References
 
