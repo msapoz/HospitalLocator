@@ -1,6 +1,6 @@
 # iPhone Hospital Locator App
 
-This project
+The Hospital Locator app displays health providers available around your current location based on data retrieved from the Google Maps API.  Additional filtering can be applied to select a search radius and choice of doctors and/or hospitals nearby, with their rating displayed in the annotation, if available.
 
 ## Installation
 
@@ -20,3 +20,4 @@ To run the project in xcode with the activated pod, run the generated HospitalLo
 * https://github.com/Alamofire/Alamofire
 * http://useyourloaf.com/blog/quick-guide-to-swift-delegates/
 * https://thatthinginswift.com/singletons/
+* Various StackOverflow threads
