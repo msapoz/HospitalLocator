@@ -28,9 +28,11 @@ class APIUtility {
         }
         
         // Determine the current location to set as a query string parameter in the GET request below.
+        var currentLocation = "33.7773798,-84.3914938" // Default location: Centergy One building
         let locationManager = CLLocationManager()
-        let currentCoordinate = locationManager.location?.coordinate
-        let currentLocation = "\(currentCoordinate!.latitude),\(currentCoordinate!.longitude)"
+        if let currentCoordinate = locationManager.location?.coordinate {
+            currentLocation = "\(currentCoordinate.latitude),\(currentCoordinate.longitude)"
+        }
         
         // Additional passed in search criteria.
         let radius = Double(radius)! * 1609.34

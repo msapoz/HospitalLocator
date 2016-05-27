@@ -1,12 +1,17 @@
 PODS:
   - Alamofire (3.4.0)
+  - HockeySDK (4.0.1):
+    - HockeySDK/AllFeaturesLib (= 4.0.1)
+  - HockeySDK/AllFeaturesLib (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - HockeySDK (~> 4.0.1)
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  HockeySDK: 1b69a82782f6a3d4a1c0b1f04dca4bca83fc8c82
 
-PODFILE CHECKSUM: 306dd006b8659debba2f5e22c3eb896c6e3d9b45
+PODFILE CHECKSUM: 0c1f65e552cc4ad6fa993671626ac2a73e271a61
 
 COCOAPODS: 1.0.0

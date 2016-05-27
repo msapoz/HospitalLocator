@@ -9,5 +9,6 @@
 #ifndef BridgeFIle_h
 #define BridgeFIle_h
 
+#import <HockeySDK/HockeySDK.h>
 
 #endif /* BridgeFIle_h */

@@ -30,11 +30,11 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, C
         // Initialize delegate that retrieves API call result set.
         APIUtility.sharedInstance.delegate = self
         
-//        if CLLocationManager.locationServicesEnabled(){
-//            locationManager = CLLocationManager()
-//            locationManager.delegate = self
-//            locationManager.startUpdatingLocation()
-//        }
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+        }
         
         self.mapView.showsUserLocation = true;
         
@@ -113,12 +113,10 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, C
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last! as CLLocation
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpanMake(0.5, 0.5))
-        
-        self.mapView.setRegion(region, animated: true)
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
+            APIUtility.sharedInstance.performGetRequest("0.5", types: ["Hospital"])
+        }
     }
 }
 

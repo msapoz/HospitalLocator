@@ -3,4 +3,5 @@ platform :ios, '9.3'
 use_frameworks!
 target "HospitalLocator" do
     pod 'Alamofire', '~> 3.4'
+    pod 'HockeySDK', '~> 4.0.1'
 end

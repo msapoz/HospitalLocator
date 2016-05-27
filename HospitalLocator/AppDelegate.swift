@@ -26,6 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
         
+        // Hockey App Configuration
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("71b9b86190d140fca03e2cb06dced164")
+        // Do some additional configuration if needed here
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+
+        
         return true
     }
 
