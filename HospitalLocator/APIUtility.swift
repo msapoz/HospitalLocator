@@ -12,17 +12,30 @@ import Alamofire
 
 class APIUtility {
     
-    func performGetCall(completion: (result: [[String:AnyObject]]?)->()) {
+    weak var delegate : APIUtilityDelegate?
+    
+    func performGetRequest() {
         
-        let apiURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyB6xydv4He0Hj6SjWJDbghJOdghCuUx0p8&location=33.7753208,-84.3909989&radius=10000&keyword=coffee"
+        let apiURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+        let apiKey = "AIzaSyB6xydv4He0Hj6SjWJDbghJOdghCuUx0p8"
+        
+        // Determine the current location to set as a query string parameter in the GET request below.
+        let locationManager = CLLocationManager()
+        let currentCoordinate = locationManager.location?.coordinate
+        let currentLocation = "\(currentCoordinate!.latitude),\(currentCoordinate!.longitude)"
+        
+        // Additional passed in search criteria.
+        let type = "restaurant"
+        let radius = "10000"
         
         var locations: [[String:AnyObject]] = []
         
-        Alamofire.request(.GET, apiURL, parameters: nil)
+        Alamofire.request(.GET, apiURL, parameters: ["location": currentLocation, "key": apiKey, "radius": radius, "type": type])
             .responseJSON { response in
 
                 if let JSON = response.result.value {
                     
+                    // Parse the JSON object and extract name, rating and lat/lng location
                     if let results = JSON["results"] as? [[String: AnyObject]] {
                         for result in results {
                             var location: [String:AnyObject] = [:]
@@ -42,15 +55,15 @@ class APIUtility {
                             }
                             locations.append(location)
                         }
-                        print (locations)
                     }
                     
-                    completion(result: locations)
+                    // Pass locations result set along to the controller that implements the delegate.
+                    self.delegate?.didFinishRetrievingData(locations, sender: self)
                 }
                 else {
                     
-                    // Caller will handle an empty result set
-                    completion(result: nil)
+                    // Otherwise pass an empty result set and allow the controller to handle it.
+                    self.delegate?.didFinishRetrievingData(nil, sender: self)
                 }
         }
     }

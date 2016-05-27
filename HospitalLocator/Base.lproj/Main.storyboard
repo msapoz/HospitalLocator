@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -73,12 +74,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ra3-zU-zuk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" id="ra3-zU-zuk">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ra3-zU-zuk" id="2r1-3E-CPE">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" id="Ghv-DP-NDg">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ghv-DP-NDg" id="zHd-dd-gaH">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWb-GZ-wfR">
+                                            <rect key="frame" x="543" y="5" width="51" height="31"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajd-up-qIw">
+                                            <rect key="frame" x="8" y="11" width="200" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="f52-rt-8P5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="VWb-GZ-wfR" firstAttribute="trailing" secondItem="zHd-dd-gaH" secondAttribute="trailingMargin" id="2YN-ai-rGB"/>
+                                        <constraint firstItem="Ajd-up-qIw" firstAttribute="leading" secondItem="zHd-dd-gaH" secondAttribute="leadingMargin" id="7gG-MW-aLj"/>
+                                        <constraint firstItem="Ajd-up-qIw" firstAttribute="centerY" secondItem="zHd-dd-gaH" secondAttribute="centerY" id="EJY-D0-zeX"/>
+                                        <constraint firstItem="VWb-GZ-wfR" firstAttribute="top" secondItem="zHd-dd-gaH" secondAttribute="topMargin" constant="-3" id="tWO-8M-u6N"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" id="pqA-nX-uA3">
+                                <rect key="frame" x="0.0" y="116" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pqA-nX-uA3" id="0mH-5t-zhG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6RN-3I-ITB">
+                                            <rect key="frame" x="543" y="5" width="51" height="31"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rin-We-KEG">
+                                            <rect key="frame" x="8" y="9" width="99" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="99" id="IFD-2v-wH9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Rin-We-KEG" firstAttribute="centerY" secondItem="0mH-5t-zhG" secondAttribute="centerY" id="NwP-q5-8Ls"/>
+                                        <constraint firstItem="6RN-3I-ITB" firstAttribute="top" secondItem="0mH-5t-zhG" secondAttribute="topMargin" constant="-3" id="PZ9-FS-joX"/>
+                                        <constraint firstItem="Rin-We-KEG" firstAttribute="top" secondItem="0mH-5t-zhG" secondAttribute="topMargin" constant="1" id="hSq-sQ-zAz"/>
+                                        <constraint firstItem="6RN-3I-ITB" firstAttribute="trailing" secondItem="0mH-5t-zhG" secondAttribute="trailingMargin" id="kc6-it-Lum"/>
+                                        <constraint firstItem="Rin-We-KEG" firstAttribute="leading" secondItem="0mH-5t-zhG" secondAttribute="leadingMargin" id="xLJ-Qw-fSR"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

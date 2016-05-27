@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate {
     
     // MARK:
     // MARK: Local Variables
@@ -27,41 +27,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        apiUtility.delegate = self
+        
         // Default to user's current location
         mapView.showsUserLocation = true
         
-        
-        apiUtility.performGetCall { (results) in
-            if (results != nil) {
-                
-                // Populate map with pin locations using the callback.
-                for result in results! {
-                    
-                    let lat = result["latitude"] as! Double
-                    let lng = result["longitude"] as! Double
-                    
-                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-                    
-                    // Drop an annotation
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = coordinate
-                    annotation.title = result["name"] as? String
-                    
-                    if let rating = result["rating"] as? String {
-                        annotation.subtitle = "Rating: " + rating
-                    }
-                    
-                    self.mapView?.addAnnotation(annotation)
-                }
-                
-                
-            }
-            else {
-                
-                // Otherwise display an alert.
-                DisplayAlert("Not Found", message: "No Results Found!", viewController: self)
-            }
-        }
+        apiUtility.performGetRequest()()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +62,43 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let navController = UINavigationController(rootViewController: searchViewController)
         
         self.presentViewController(navController, animated: false, completion: nil)
+    }
+    
+    // MARK:
+    // MARK: Delegate Implementations
+    
+    func didFinishRetrievingData(results: [[String : AnyObject]]?, sender: AnyObject) {
+        
+        if (results != nil) {
+            
+            // Populate map with pin locations using the callback.
+            for result in results! {
+                
+                let lat = result["latitude"] as! Double
+                let lng = result["longitude"] as! Double
+                
+                let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                
+                // Drop an annotation
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = coordinate
+                annotation.title = result["name"] as? String
+                
+                if let rating = result["rating"] as? String {
+                    annotation.subtitle = "Rating: " + rating
+                }
+                
+                self.mapView?.addAnnotation(annotation)
+            }
+            
+            
+        }
+        else {
+            
+            // Otherwise display an alert.
+            DisplayAlert("Not Found", message: "No Results Found!", viewController: self)
+        }
+        
     }
 }
 

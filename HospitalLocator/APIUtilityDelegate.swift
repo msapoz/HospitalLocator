@@ -6,4 +6,10 @@
 //  Copyright © 2016 Mikhail Sapozhnikov. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol APIUtilityDelegate: class {
+    
+    // The delegate implementer will be passed along a result set of the API call in the APIUtility.
+    func didFinishRetrievingData(results:[[String:AnyObject]]?, sender: AnyObject)
+}
