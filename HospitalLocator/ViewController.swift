@@ -38,7 +38,8 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, C
         
         self.mapView.showsUserLocation = true;
         
-        APIUtility.sharedInstance.performGetRequest("0.5", types: ["Hospital"])
+        // Display any immediate hospitals near me on app load, within a 0.5 mile range.
+        APIUtility.sharedInstance.performGetRequest("0.5", types: ["hospital"])
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +57,7 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, C
     }
     
     // Default to user's location when the GPSArrow is clicked.
+    // Extract this method from the IB action in case we want to call it from another method.
     func zoomToCurrentLocation(sender: AnyObject) {
         if let coordinate = mapView.userLocation.location?.coordinate {
             let region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
@@ -108,14 +110,19 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, C
         else {
             
             // Otherwise display an alert.
-            DisplayAlert("Not Found", message: "No Results Found!", viewController: self)
+            let alert = UIAlertController(title: "Not Found", message: "No Results Found", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+//            DisplayAlert("Not Found", message: "No Results Found!", viewController: self)
         }
         
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
-            APIUtility.sharedInstance.performGetRequest("0.5", types: ["Hospital"])
+            APIUtility.sharedInstance.performGetRequest("0.5", types: ["hospital"])
         }
     }
 }

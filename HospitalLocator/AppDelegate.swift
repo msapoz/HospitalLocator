@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         BITHockeyManager.sharedHockeyManager().startManager()
         BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
 
-        
         return true
     }
 

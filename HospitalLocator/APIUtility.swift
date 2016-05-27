@@ -22,6 +22,7 @@ class APIUtility {
         
         var locations: [[String:AnyObject]] = []
         
+        // Pass an empty locations object to the delegate controller if no types were specified, don't bother making the call.
         if types.count == 0 {
             self.delegate?.didFinishRetrievingData(locations, sender: self)
             return
@@ -35,12 +36,13 @@ class APIUtility {
         }
         
         // Additional passed in search criteria.
-        let radius = Double(radius)! * 1609.34
+        let radius = Double(radius)! * 1609.34 // convert the radius to miles
         let type = types.joinWithSeparator("&type=")
         
+        // Update the API URL manually with the type query string because AlamoFire's parameters argument requires a dictionary, so we can't pass it multiple types.
+        let updatedURL = apiURL + "?type=" + type
         
-        
-        Alamofire.request(.GET, apiURL, parameters: ["location": currentLocation, "key": apiKey, "radius": radius, "type": type])
+        Alamofire.request(.GET, updatedURL, parameters: ["location": currentLocation, "key": apiKey, "radius": radius])
             .responseJSON { response in
                 
                 print (response.request)
