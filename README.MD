@@ -1,9 +1,11 @@
 # iPhone Hospital Locator App
 
-## Installation
-This project uses the AFNetworking CocoaPod as specified [here](https://github.com/AFNetworking/AFNetworking) to make the REST calls to the API.
+This project
 
-To run the project in xcode with the activated pod, run the generated .xcworkspace file instead of .xcodeproj.
+## Installation
+
+This project uses the Alamofire CocoaPod as specified [here](https://github.com/Alamofire/Alamofire) to make the REST calls to the API.
+To run the project in xcode with the activated pod, run the generated HospitalLocator.xcworkspace file instead of HospitalLocator.xcodeproj.
 
 ## References
 
@@ -16,3 +18,4 @@ To run the project in xcode with the activated pod, run the generated .xcworkspa
 * https://www.raywenderlich.com/59255/afnetworking-2-0-tutorial
 * http://roadfiresoftware.com/2015/10/how-to-parse-json-with-swift-2/
 * https://github.com/Alamofire/Alamofire
+* http://useyourloaf.com/blog/quick-guide-to-swift-delegates/
