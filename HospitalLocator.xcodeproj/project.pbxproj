@@ -22,7 +22,6 @@
 		256D0D441CF7717D000B72B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D0D431CF7717D000B72B1 /* SearchViewController.swift */; };
 		2571E3681CF7DF1B0004975C /* APIUtilityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571E3671CF7DF1B0004975C /* APIUtilityDelegate.swift */; };
 		25AF6E141CF7A65A0056CA69 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AF6E131CF7A65A0056CA69 /* Alamofire.framework */; };
-		25AF6E161CF7ADC90056CA69 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF6E151CF7ADC90056CA69 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +65,6 @@
 		2571E3671CF7DF1B0004975C /* APIUtilityDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUtilityDelegate.swift; sourceTree = "<group>"; };
 		25A585621CF811C700C49BB8 /* BridgeFIle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeFIle.h; sourceTree = "<group>"; };
 		25AF6E131CF7A65A0056CA69 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/HospitalLocator-aavggjlzauimypfcpxqfrcyossli/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		25AF6E151CF7ADC90056CA69 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		BF5B2A2D02B4C55CB40064FA /* Pods_HospitalLocator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HospitalLocator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6880930BBD80327F529A3A8 /* Pods-HospitalLocator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HospitalLocator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HospitalLocator/Pods-HospitalLocator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +134,6 @@
 				252F10F41CF7455200B8ED1B /* Info.plist */,
 				256D0D431CF7717D000B72B1 /* SearchViewController.swift */,
 				2516153B1CF78DDF00221C53 /* APIUtility.swift */,
-				25AF6E151CF7ADC90056CA69 /* AlertHelper.swift */,
 				2571E3671CF7DF1B0004975C /* APIUtilityDelegate.swift */,
 				25A585621CF811C700C49BB8 /* BridgeFIle.h */,
 			);
@@ -379,7 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25AF6E161CF7ADC90056CA69 /* AlertHelper.swift in Sources */,
 				252F10EB1CF7455200B8ED1B /* DetailViewController.swift in Sources */,
 				252F10E91CF7455200B8ED1B /* ViewController.swift in Sources */,
 				2516153C1CF78DDF00221C53 /* APIUtility.swift in Sources */,
