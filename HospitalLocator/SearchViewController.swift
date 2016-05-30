@@ -67,9 +67,4 @@ class SearchViewController : UITableViewController {
         
         self.dismissViewControllerAnimated(true, completion:nil)
     }
-    
-    // MARK
-    // MARK: Filter IB Actions
-    
-    
 }

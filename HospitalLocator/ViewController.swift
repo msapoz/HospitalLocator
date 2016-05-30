@@ -83,9 +83,10 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, C
     
     func didFinishRetrievingData(results: [[String : AnyObject]]?, sender: AnyObject) {
         
-        mapView.removeAnnotations( mapView.annotations )
-        
         if (results != nil) {
+            
+            // Clear the map of any current annotations
+            mapView.removeAnnotations( mapView.annotations )
             
             // Populate map with pin locations using the callback.
             for result in results! {
@@ -114,8 +115,6 @@ class ViewController: UIViewController, MKMapViewDelegate, APIUtilityDelegate, C
             let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
             alert.addAction(action)
             self.presentViewController(alert, animated: true, completion: nil)
-            
-//            DisplayAlert("Not Found", message: "No Results Found!", viewController: self)
         }
         
     }
